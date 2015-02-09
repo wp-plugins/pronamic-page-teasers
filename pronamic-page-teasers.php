@@ -1,12 +1,18 @@
 <?php
 /*
 Plugin Name: Pronamic Page Teasers
-Plugin URI: http://pronamic.eu/wordpress/page-teasers/
-Description: This plugin makes it simple to bind pages (teasers) to a page
-Version: 1.2
+Plugin URI: http://www.pronamic.eu/plugins/pronamic-page-teasers/
+Description: Deprecated — This plugin makes it simple to bind pages (teasers) to a page.
+
+Version: 1.2.1
 Requires at least: 3.0
+
 Author: Pronamic
 Author URI: http://pronamic.eu/
+
+Text Domain: pronamic-page-teasers
+Domain Path: /languages/
+
 License: GPL
 */
 
@@ -34,13 +40,6 @@ class PronamicPageTeasers {
 	 */
 	const META_KEY_TEASERS = '_pronamic_page_teasers';
 
-	/**
-	 * The default 'the_content' priority
-	 * 
-	 * @var int
-	 */
-	const FILTER_THE_CONTENT_PRIORITY = 20;
-
 	////////////////////////////////////////////////////////////
 
 	/**
@@ -62,7 +61,7 @@ class PronamicPageTeasers {
 
 		add_action('admin_init', array(__CLASS__, 'adminInitialize'));
 
-		add_filter('the_content', 'pronamic_page_teasers_the_content', self::FILTER_THE_CONTENT_PRIORITY);
+		add_filter( 'the_content', 'pronamic_page_teasers_the_content' );
 	}
 
 	////////////////////////////////////////////////////////////
